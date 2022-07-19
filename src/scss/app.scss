@@ -1,0 +1,21 @@
+@import 'libs/normalize';
+@import 'variables';
+@import './components/all';
+
+body {
+  background-color: $background;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: $background;
+  max-width: 1440px;
+
+  @media (max-width: 768px) {
+    width: calc(100vw - 20px);
+    margin-top: 15px;
+  }
+}
+

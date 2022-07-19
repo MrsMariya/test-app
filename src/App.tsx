@@ -1,8 +1,17 @@
+import Footer from "./components/Footer/Footer";
+import SideBar from "./components/SideBar/SideBar";
+import MainPage from "./pages/MainPage";
+import './scss/app.scss';
+
 function App() {
   return (
-    <div>
-      Hi!
-    </div>
+    <>
+      <div className="wrapper">
+        <SideBar />
+        <MainPage />
+      </div>
+      <Footer />
+    </>
   );
 }
 

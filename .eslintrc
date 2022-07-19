@@ -10,7 +10,7 @@
   ],
   "parserOptions": {
     "project": "tsconfig.json",
-    "tsconfigRootDir": "../project-management-app/",
+    "tsconfigRootDir": "../test-app/",
     "ecmaFeatures": {
       "jsx": true
     },

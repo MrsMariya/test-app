@@ -1,0 +1,47 @@
+.header-wrapper {
+  display: flex;
+  background-color: $background;
+  padding: 0 40px;
+  height: 72px;
+  max-width: 1160px;
+  width: 100%;
+  border-bottom: 1px solid $line_color;
+  order: 0;
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__title {
+    display: flex;
+    width: 278px;
+    justify-content: space-between;
+    cursor: pointer;
+
+    span {
+      text-transform: uppercase;
+      color: $menu_bg;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    span:hover {
+      color: $hover_btn;
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 24px;
+    cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+}

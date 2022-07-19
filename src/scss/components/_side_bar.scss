@@ -1,0 +1,49 @@
+.side-bar {
+  display: flex;
+  text-align: center;
+  background-color: $side_bg;
+  max-width: 272px;
+  order: 0;
+
+  &__wrapper {
+    display: flex;
+    width: 224px;
+    height: 900px;
+    flex-direction: column;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    padding: 20px;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $input_bg;
+    height: 44px;
+    gap: 12px;
+    cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .list-title {
+      font-size: 16px;
+      color: $menu_bg;
+      font-weight: 600;
+    }
+
+    .list-title:hover {
+      color: $hover_btn;
+    }
+
+  }
+}

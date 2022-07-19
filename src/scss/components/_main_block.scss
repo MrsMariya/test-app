@@ -1,0 +1,15 @@
+.main-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  order: 1;
+  margin: 0 40px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: 1px solid $line_color;
+    padding-bottom: 12px;
+  }
+}

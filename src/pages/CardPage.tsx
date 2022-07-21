@@ -1,15 +1,15 @@
+import CardBlock from '../components/CardBlock/CardBlock';
 import SideBar from '../components/SideBar/SideBar';
-import List from '../components/List/List';
 
-const MainPage = () => {
+const CardPage = () => {
   return (
     <>
       <SideBar />
       <div className="main-page__wrapper">
-        <List />
+        <CardBlock />
       </div>
     </>
   );
 };
 
-export default MainPage;
+export default CardPage;

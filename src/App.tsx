@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
+import CardPage from './pages/CardPage';
 import MainPage from './pages/MainPage';
 import NotFoundPage from './pages/NotFoundPage';
 import SignInPage from './pages/SignInPage';
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path={RoutersMap.signIn} element={<SignInPage />} />
           <Route path={RoutersMap.main} element={<MainPage />} />
+          <Route path={RoutersMap.card} element={<CardPage />} />
           <Route path={RoutersMap.notFound} element={<NotFoundPage />} />
         </Routes>
       </div>

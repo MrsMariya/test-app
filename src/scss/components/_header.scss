@@ -20,15 +20,15 @@
     justify-content: space-between;
     cursor: pointer;
 
-    span {
+    &-link {
       text-transform: uppercase;
       color: $menu_bg;
       font-weight: 600;
       font-size: 16px;
-    }
-
-    span:hover {
-      color: $hover_btn;
+      transition: 0.3s;
+      &:hover {
+        color: $hover_btn;
+      }
     }
   }
 

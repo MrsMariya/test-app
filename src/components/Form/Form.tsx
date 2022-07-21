@@ -20,7 +20,6 @@ const Form = () => {
   const handleClick = () => {
     axios.get(URL + name).then((res) => sessionStorage.setItem('token', res.headers.authorization));
     navigate(`${RoutersMap.main}`);
-    console.log(sessionStorage.getItem('token'));
   };
 
   return (

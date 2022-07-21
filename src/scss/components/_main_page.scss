@@ -18,3 +18,20 @@
     cursor: pointer;
   }
 }
+
+.list-items {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    color: $hover_btn;
+  }
+  &:active {
+    color: $menu_bg;
+  }
+}

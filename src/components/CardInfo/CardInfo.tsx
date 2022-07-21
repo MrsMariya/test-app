@@ -6,7 +6,6 @@ const CardInfo = () => {
       <span className="card-block_info-description">Договор:</span>
       <span className="card-block_info-description">Форма:</span>
       <span className="card-block_info-description">Тип:</span>
-      <button>Click</button>
     </div>
   );
 };

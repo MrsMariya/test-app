@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
 import arrow from '../../assets/svg/Arrow.svg';
 import linked from '../../assets/svg/Linked.svg';
 import rotation from '../../assets/svg/Rotation.svg';
 import deleteBtn from '../../assets/svg/Delete.svg';
+import { RoutersMap } from '../../utils/constants';
 
 const Header = () => {
   return (
@@ -9,7 +11,9 @@ const Header = () => {
       <div className="header-wrapper__links">
         <div className="header-wrapper__title">
           <img src={arrow} alt="arrow" />
-          <span>К списку юридических лиц</span>
+          <Link className="header-wrapper__title-link" to={RoutersMap.main}>
+            К списку юридических лиц
+          </Link>
         </div>
         <div className="header-wrapper__button">
           <img src={linked} alt="linked" />

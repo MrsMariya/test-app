@@ -11,14 +11,14 @@ const Header = () => {
           <img src={arrow} alt="arrow" />
           <span>К списку юридических лиц</span>
         </div>
-        <div className='header-wrapper__button'>
+        <div className="header-wrapper__button">
           <img src={linked} alt="linked" />
           <img src={rotation} alt="rotation" />
           <img src={deleteBtn} alt="deleteBtn" />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Header;

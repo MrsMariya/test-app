@@ -1,11 +1,7 @@
-import Form from "../components/Form/Form";
+import Form from '../components/Form/Form';
 
 const SignInPage = () => {
-  return (
-    <>
-      <Form />
-    </>
-  )
-}
+  return <Form />;
+};
 
 export default SignInPage;

@@ -1,4 +1,4 @@
-import SideMenu from "./SideMenu";
+import SideMenu from './SideMenu';
 import building from '../../assets/svg/Building.svg';
 
 const SideBar = () => {
@@ -16,7 +16,7 @@ const SideBar = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SideBar;

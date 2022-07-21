@@ -1,21 +1,22 @@
-import Header from "../components/Header/Header";
-import MainBlock from "../components/MainBlock/MainBlock";
-import edit from "../assets/svg/Edit.svg";
-import SideBar from "../components/SideBar/SideBar";
+import { useEffect } from 'react';
+import MainBlock from '../components/MainBlock/MainBlock';
+import SideBar from '../components/SideBar/SideBar';
+import List from '../components/List/List';
 
 const MainPage = () => {
+  useEffect(() => {
+    console.log(sessionStorage.getItem('token'));
+  }, []);
+
   return (
     <>
       <SideBar />
-      <div className="main-page__wrapper" >
-        <Header />
-        <div className="main-page__title"><span>Перспективы захоронения</span>
-          <img src={edit} alt="edit" />
-        </div>
+      <div className="main-page__wrapper">
+        <List />
         <MainBlock />
       </div>
     </>
-  )
-}
+  );
+};
 
 export default MainPage;

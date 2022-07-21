@@ -4,4 +4,4 @@ export const RoutersMap = {
   notFound: '*',
 };
 
-export const URL = 'http://135.181.35.61:2112/auth?user='
+export const URL = 'http://135.181.35.61:2112/auth?user=';

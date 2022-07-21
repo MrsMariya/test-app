@@ -21,7 +21,7 @@ const SideMenu = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SideMenu;

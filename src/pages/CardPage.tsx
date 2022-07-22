@@ -1,18 +1,20 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import CardInfo from '../components/CardInfo/CardInfo';
+import ContactInfo from '../components/ContactInfo/ContactInfo';
+import Photos from '../components/photos/Photos';
 import SideBar from '../components/SideBar/SideBar';
-import { URLCompanies } from '../utils/constants';
-import { ListType } from './MainPage';
+import { URLCompanies, URLContacts } from '../utils/constants';
+import { ContactType, ListType } from '../utils/types';
 
 const CardPage = () => {
   const token = sessionStorage.getItem('token');
   const [error, setError] = useState('');
   const [info, setInfo] = useState<ListType>({
+    id: '',
     contactId: '',
     contract: {},
     createdAt: '',
-    id: '',
     name: '',
     photos: [],
     shortName: '',
@@ -21,6 +23,30 @@ const CardPage = () => {
     updatedAt: '',
     businessEntity: '',
   });
+  const [contact, setContact] = useState<ContactType>({
+    id: '',
+    lastname: '',
+    firstname: '',
+    patronymic: '',
+    phone: '',
+    email: '',
+  });
+
+  const {
+    contactId,
+    contract,
+    createdAt,
+    name,
+    photos,
+    shortName,
+    status,
+    type,
+    updatedAt,
+    businessEntity,
+    id,
+  } = info;
+
+  const { lastname, firstname, patronymic, phone, email } = contact;
 
   useEffect(() => {
     axios
@@ -34,21 +60,18 @@ const CardPage = () => {
       .catch((e) => {
         setError(e.message);
       });
+    axios
+      .get(URLContacts, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${token}`,
+        },
+      })
+      .then((res) => setContact(res.data))
+      .catch((e) => {
+        setError(e.message);
+      });
   }, []);
-
-  const {
-    contactId,
-    contract,
-    createdAt,
-    id,
-    name,
-    photos,
-    shortName,
-    status,
-    type,
-    updatedAt,
-    businessEntity,
-  } = info;
 
   return (
     <>
@@ -59,15 +82,24 @@ const CardPage = () => {
           contactId={contactId}
           contract={contract}
           createdAt={createdAt}
-          id={id}
           name={name}
-          photos={photos}
           shortName={shortName}
           status={status}
           type={type}
           updatedAt={updatedAt}
           businessEntity={businessEntity}
+          id={id}
+          photos={photos}
         />
+        <ContactInfo
+          id={id}
+          lastname={lastname}
+          firstname={firstname}
+          patronymic={patronymic}
+          phone={phone}
+          email={email}
+        />
+        <Photos key={id} photos={photos} id={id} />
       </div>
     </>
   );

@@ -4,34 +4,14 @@ import SideBar from '../components/SideBar/SideBar';
 import List from '../components/List/List';
 import { URLCompanies } from '../utils/constants';
 
-export type ListType = {
-  contactId: string;
-  contract: object;
-  createdAt: string;
-  id: string;
+type TitleType = {
   name: string;
-  photos: Array<string>;
-  shortName: string;
-  status: string;
-  type: Array<string>;
-  updatedAt: string;
-  businessEntity: string;
 };
 
 const MainPage = () => {
   const token = sessionStorage.getItem('token');
-  const [info, setInfo] = useState<ListType>({
-    contactId: '',
-    contract: {},
-    createdAt: '',
-    id: '',
+  const [info, setInfo] = useState<TitleType>({
     name: '',
-    photos: [],
-    shortName: '',
-    status: '',
-    type: [],
-    updatedAt: '',
-    businessEntity: '',
   });
   const [error, setError] = useState('');
 
@@ -47,13 +27,13 @@ const MainPage = () => {
       .catch((e) => {
         setError(e.message);
       });
-  }, []);
+  }, [token]);
 
   return (
     <>
       <SideBar />
       <div className="main-page__wrapper">
-        <List name={info.name} error={error} />
+        <List name={info.name} />
       </div>
     </>
   );

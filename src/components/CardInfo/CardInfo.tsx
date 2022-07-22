@@ -1,23 +1,24 @@
 import Header from '../Header/Header';
 import edit from '../../assets/svg/Edit.svg';
-import { ListType } from '../../pages/MainPage';
+import { ListType } from '../../utils/types';
 
-const CardInfo = ({ name, contactId, businessEntity, type }: ListType): JSX.Element => {
-  /* id: "12", contactId: "16", name: "ООО Фирма «Перспективные захоронения»",…}
-businessEntity: "ООО" */
+const CardInfo = ({ name, contactId, businessEntity, type, shortName }: ListType): JSX.Element => {
   return (
     <>
       <Header />
       <div className="main-page__title">
-        <span>Перспективы захоронения</span>
+        <span>{shortName}</span>
         <img src={edit} alt="edit" />
       </div>
       <div className="card-block__info">
-        <span className="card-block_info-title">Общая информация</span>
+        <div className="card-block__info-title">
+          Общая информация
+          <img src={edit} alt="edit" />
+        </div>
         <span className="card-block_info-description">Полное название: {name}</span>
-        <span className="card-block_info-description">Договор:{contactId}</span>
+        <span className="card-block_info-description">Договор: {contactId}</span>
         <span className="card-block_info-description">Форма: {businessEntity}</span>
-        <span className="card-block_info-description">Тип:{type}</span>
+        <span className="card-block_info-description">Тип: {type}</span>
       </div>
     </>
   );

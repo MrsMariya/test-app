@@ -3,14 +3,12 @@ import { RoutersMap } from '../../utils/constants';
 
 type MyProps = {
   name: string;
-  error: string;
 };
 
 const List = (props: MyProps) => {
-  const { name, error } = props;
+  const { name } = props;
   return (
     <Link className="list-items" to={RoutersMap.card}>
-      {error && <p>{error}</p>}
       {name}
     </Link>
   );

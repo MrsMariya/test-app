@@ -4,33 +4,14 @@ import CardInfo from '../components/CardInfo/CardInfo';
 import ContactInfo from '../components/ContactInfo/ContactInfo';
 import Photos from '../components/photos/Photos';
 import SideBar from '../components/SideBar/SideBar';
-import { URLCompanies, URLContacts } from '../utils/constants';
+import { contactObject, infoObject, URLCompanies, URLContacts } from '../utils/constants';
 import { ContactType, ListType } from '../utils/types';
 
 const CardPage = () => {
   const token = sessionStorage.getItem('token');
   const [error, setError] = useState('');
-  const [info, setInfo] = useState<ListType>({
-    id: '',
-    contactId: '',
-    contract: {},
-    createdAt: '',
-    name: '',
-    photos: [],
-    shortName: '',
-    status: '',
-    type: [],
-    updatedAt: '',
-    businessEntity: '',
-  });
-  const [contact, setContact] = useState<ContactType>({
-    id: '',
-    lastname: '',
-    firstname: '',
-    patronymic: '',
-    phone: '',
-    email: '',
-  });
+  const [info, setInfo] = useState<ListType>(infoObject);
+  const [contact, setContact] = useState<ContactType>(contactObject);
 
   const {
     contactId,

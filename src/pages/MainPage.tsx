@@ -33,6 +33,7 @@ const MainPage = () => {
     <>
       <SideBar />
       <div className="main-page__wrapper">
+        {info.name.length === 0 && <div className="loading" />}
         <List name={info.name} />
       </div>
     </>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { RoutersMap, URL } from '../utils/constants';
@@ -22,18 +22,23 @@ const SignInPage = () => {
     setName(e.target.value);
   };
 
-  const handleClick = () => {
+  useEffect(() => {
     axios
       .get(URL + name)
       .then((res) => {
         sessionStorage.setItem('token', res.headers.authorization);
-        setIsRegister(true);
       })
       .catch((e) => {
         setError(e.message);
         setIsRegister(false);
       });
-    navigate(`${RoutersMap.main}`);
+  }, [name]);
+
+  const handleClick = () => {
+    if (sessionStorage.getItem('token')) {
+      navigate(`${RoutersMap.main}`);
+      setIsRegister(true);
+    }
   };
 
   return (
@@ -42,6 +47,7 @@ const SignInPage = () => {
         <label htmlFor="loginId">
           login:
           <input
+            value={name}
             {...register('login', {
               required: 'Необходимо заполнить поле!',
               minLength: {
@@ -50,7 +56,7 @@ const SignInPage = () => {
               },
             })}
             id="loginId"
-            onChange={(e) => handleChange(e)}
+            onChange={handleChange}
           />
         </label>
         <div>
@@ -60,7 +66,6 @@ const SignInPage = () => {
             </p>
           )}
         </div>
-        {isRegister && <div className="loading" />}
         <button
           className="form__btn"
           type="submit"
@@ -70,7 +75,7 @@ const SignInPage = () => {
           log in
         </button>
         {isRegister && <div className="loading" />}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {!name && error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
     </div>
   );

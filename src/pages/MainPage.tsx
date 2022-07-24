@@ -30,7 +30,7 @@ const MainPage = () => {
       .catch((e) => {
         setError(e.message);
       });
-  }, []);
+  }, [token]);
 
   return (
     <>

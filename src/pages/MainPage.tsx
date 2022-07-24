@@ -35,11 +35,11 @@ const MainPage = () => {
   return (
     <>
       <SideBar />
-      <div className="main-page__wrapper">
+      <main className="main-page__wrapper">
         {info.name.length === 0 && <div className="loading" />}
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <List name={info.name} />
-      </div>
+      </main>
     </>
   );
 };

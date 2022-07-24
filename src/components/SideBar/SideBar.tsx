@@ -3,7 +3,7 @@ import building from '../../assets/svg/Building.svg';
 
 const SideBar = () => {
   return (
-    <div className="side-bar">
+    <aside className="side-bar">
       <SideMenu />
       <div className="side-bar__wrapper">
         <div className="side-bar__title">
@@ -15,7 +15,7 @@ const SideBar = () => {
           <span className="list-title">Органзации</span>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 

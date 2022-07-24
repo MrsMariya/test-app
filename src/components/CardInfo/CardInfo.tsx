@@ -1,19 +1,17 @@
-import Header from '../Header/Header';
-import edit from '../../assets/svg/Edit.svg';
 import { ListType } from '../../utils/types';
+import EditButton from '../EditButton/EditButton';
 
 const CardInfo = ({ name, contactId, businessEntity, type, shortName }: ListType): JSX.Element => {
   return (
     <>
-      <Header />
       <div className="main-page__title">
         <span>{shortName}</span>
-        <img src={edit} alt="edit" />
+        <EditButton />
       </div>
       <div className="card-block__info">
         <div className="card-block__info-title">
           Общая информация
-          <img src={edit} alt="edit" />
+          <EditButton />
         </div>
         <span className="card-block_info-description">Полное название: {name}</span>
         <span className="card-block_info-description">Договор: {contactId}</span>

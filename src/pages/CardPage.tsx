@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import CardInfo from '../components/CardInfo/CardInfo';
+import ConfirmationWindow from '../components/ConfirmationWindow/ConfirmationWindow';
 import ContactInfo from '../components/ContactInfo/ContactInfo';
+import Header from '../components/Header/Header';
 import Photos from '../components/photos/Photos';
 import SideBar from '../components/SideBar/SideBar';
 import { contactObject, infoObject, URLCompanies, URLContacts } from '../utils/constants';
@@ -54,11 +56,22 @@ const CardPage = () => {
       });
   }, []);
 
+  const [isOpen, setIsOpen] = useState(false);
+  const closeWindow = () => {
+    return setIsOpen(false);
+  };
+
+  const openWindow = () => {
+    return setIsOpen(true);
+  };
+
   return (
     <>
       <SideBar />
       <div className="main-page__wrapper">
         {error && <p>{error}</p>}
+        <Header openWindow={openWindow} />
+        {isOpen && <ConfirmationWindow closeWindow={closeWindow} />}
         <CardInfo
           contactId={contactId}
           contract={contract}

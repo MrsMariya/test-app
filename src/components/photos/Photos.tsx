@@ -1,10 +1,10 @@
 import { SyntheticEvent, useRef, useState } from 'react';
 import axios from 'axios';
-import edit from '../../assets/svg/Edit.svg';
 import addFile from '../../assets/svg/Add.svg';
 import { PhotoList } from '../PhotoList/PhotoList';
 import { URLImage } from '../../utils/constants';
 import { PhotosElType, PhotoType } from '../../utils/types';
+import EditButton from '../EditButton/EditButton';
 
 const Photos = ({ photos, id }: PhotoType) => {
   const token = sessionStorage.getItem('token');
@@ -45,7 +45,7 @@ const Photos = ({ photos, id }: PhotoType) => {
     <div className="card-block__photos">
       <div className="card-block__info-title">
         Приложенные фото
-        <img src={edit} alt="edit" />
+        <EditButton />
       </div>
       {!isLoading && <div className="loading" />}
       <PhotoList photos={photo} key={id} id={id} />

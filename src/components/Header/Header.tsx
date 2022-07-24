@@ -5,9 +5,9 @@ import rotation from '../../assets/svg/Rotation.svg';
 import deleteBtn from '../../assets/svg/Delete.svg';
 import { RoutersMap } from '../../utils/constants';
 
-const Header = () => {
+const Header = ({ openWindow }: { openWindow: () => void }) => {
   return (
-    <div className="header-wrapper">
+    <header className="header-wrapper">
       <div className="header-wrapper__links">
         <div className="header-wrapper__title">
           <img src={arrow} alt="arrow" />
@@ -16,12 +16,14 @@ const Header = () => {
           </Link>
         </div>
         <div className="header-wrapper__button">
-          <img src={linked} alt="linked" />
-          <img src={rotation} alt="rotation" />
-          <img src={deleteBtn} alt="deleteBtn" />
+          <img src={linked} alt="linked" title="linked" />
+          <img src={rotation} alt="rotation" title="rotation" />
+          <button type="button" onClick={openWindow}>
+            <img src={deleteBtn} alt="deleteBtn" title="deleteBtn" />
+          </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

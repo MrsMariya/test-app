@@ -13,7 +13,6 @@ export type ListType = {
 };
 
 export type PhotosElType = {
-  preventDefault();
   thumbpath: string;
   name: string;
 };

@@ -13,6 +13,7 @@ export type ListType = {
 };
 
 export type PhotosElType = {
+  preventDefault();
   thumbpath: string;
   name: string;
 };
@@ -30,4 +31,8 @@ export type PhotoType = {
   key: string;
   photos: Array<PhotosElType>;
   id: string;
+};
+
+export type MyNewProps = {
+  photoList: Array<PhotosElType>;
 };

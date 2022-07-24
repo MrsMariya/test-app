@@ -23,17 +23,21 @@ const MainPage = () => {
           Authorization: `${token}`,
         },
       })
-      .then((res) => setInfo(res.data))
+      .then((res) => {
+        setInfo(res.data);
+        setError('');
+      })
       .catch((e) => {
         setError(e.message);
       });
-  }, [token]);
+  }, []);
 
   return (
     <>
       <SideBar />
       <div className="main-page__wrapper">
         {info.name.length === 0 && <div className="loading" />}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <List name={info.name} />
       </div>
     </>

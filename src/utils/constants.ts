@@ -13,7 +13,10 @@ export const URLImage = 'http://135.181.35.61:2112/companies/12/image';
 export const infoObject = {
   id: '',
   contactId: '',
-  contract: {},
+  contract: {
+    issue_date: '',
+    no: '',
+  },
   createdAt: '',
   name: '',
   photos: [],

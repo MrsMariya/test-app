@@ -1,6 +1,9 @@
 export type ListType = {
   contactId: string;
-  contract: object;
+  contract: {
+    issue_date: string;
+    no: string;
+  };
   createdAt: string;
   name: string;
   photos: Array<PhotosElType>;

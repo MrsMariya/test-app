@@ -40,7 +40,9 @@ const CardPage = () => {
           Authorization: `${token}`,
         },
       })
-      .then((res) => setInfo(res.data))
+      .then((res) => {
+        setInfo(res.data);
+      })
       .catch((e) => {
         setError(e.message);
       });

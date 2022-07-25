@@ -11,6 +11,26 @@
     gap: 1rem;
     border-bottom: 1px solid $line_color;
     padding: 2rem 0;
+
+    table  {
+      width: 100%;
+      table-layout: auto;
+
+      table, td:nth-child(1) {
+        width: 20%;
+      }
+      
+      td, th {
+        padding: 0.5rem;
+        font-weight: 400;
+        color: $dark_font;
+      }
+
+      span {
+        font-weight: 300;
+        color: $gray_font;
+      }
+    }
   }
 
   &__info-title {
@@ -39,6 +59,8 @@
   }
 
   &__photos {
+    align-items: flex-start;
+    
     label {
       text-transform: uppercase;
       font-size: 1rem;

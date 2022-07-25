@@ -7,7 +7,7 @@ const ConfirmationWindow = ({
 }) => {
   return (
     <div className="overlay">
-      <div className="confirm-wrapper">
+      <form className="confirm-wrapper">
         <span className="confirm-wrapper__title">Удалить карточку</span>
         <span className="card-block_info-description">Отправить карточку организации в архив?</span>
         <div className="confirm-wrapper__buttons">
@@ -18,7 +18,7 @@ const ConfirmationWindow = ({
             Отмена
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

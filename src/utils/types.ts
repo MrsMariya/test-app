@@ -1,16 +1,13 @@
 export type ListType = {
-  contactId: string;
   contract: {
     issue_date: string;
     no: string;
   };
-  createdAt: string;
   name: string;
   photos: Array<PhotosElType>;
   shortName: string;
   status: string;
   type: Array<string>;
-  updatedAt: string;
   businessEntity: string;
   id: string;
 };
@@ -37,4 +34,12 @@ export type PhotoType = {
 
 export type MyNewProps = {
   photoList: Array<PhotosElType>;
+};
+
+export type ConfirmInfoType = {
+  name: string;
+  contract: { issue_date: string; no: string };
+  businessEntity: string;
+  type: Array<string>;
+  shortName: string;
 };

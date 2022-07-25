@@ -14,6 +14,7 @@ const CardPage = () => {
   const [error, setError] = useState('');
   const [info, setInfo] = useState<ListType>(infoObject);
   const [contact, setContact] = useState<ContactType>(contactObject);
+  const [isOpen, setIsOpen] = useState(false);
 
   const {
     contactId,
@@ -54,9 +55,8 @@ const CardPage = () => {
       .catch((e) => {
         setError(e.message);
       });
-  }, []);
+  }, [token]);
 
-  const [isOpen, setIsOpen] = useState(false);
   const closeWindow = () => {
     return setIsOpen(false);
   };
@@ -65,13 +65,31 @@ const CardPage = () => {
     return setIsOpen(true);
   };
 
+  const deleteCompany = () => {
+    axios
+      .delete(URLCompanies, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${token}`,
+        },
+      })
+      .then(() => {
+        setInfo(infoObject);
+        setContact(contactObject);
+        closeWindow();
+      })
+      .catch((e) => {
+        setError(e.message);
+      });
+  };
+
   return (
     <>
       <SideBar />
       <div className="main-page__wrapper">
         {error && <p>{error}</p>}
         <Header openWindow={openWindow} />
-        {isOpen && <ConfirmationWindow closeWindow={closeWindow} />}
+        {isOpen && <ConfirmationWindow closeWindow={closeWindow} deleteCompany={deleteCompany} />}
         <CardInfo
           contactId={contactId}
           contract={contract}

@@ -75,7 +75,6 @@ const SignInPage = () => {
           log in
         </button>
         {isRegister && <div className="loading" />}
-        {!name && error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
     </div>
   );

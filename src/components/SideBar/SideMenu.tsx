@@ -21,7 +21,7 @@ const SideMenu = () => {
         <div className="side-menu__bottom-icons">
           <img src={settings} alt="settings" title="settings" />
           <img src={chat} alt="chat" title="chat" />
-          <Link to="/">
+          <Link to={RoutersMap.signIn}>
             <img src={exit} alt="exit" title="exit" />
           </Link>
         </div>

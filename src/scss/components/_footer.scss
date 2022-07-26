@@ -10,5 +10,8 @@
   span {
     color: #B9B9B9;
 
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
   }
 }

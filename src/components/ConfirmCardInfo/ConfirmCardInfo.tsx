@@ -120,7 +120,7 @@ const ConfirmCardInfo = ({ editInfo, closeInfoWindow }: MyPropsType): JSX.Elemen
               required: 'Необходимо заполнить поле!',
             })}
           >
-            <option value="other">Другое</option>
+            <option value="">Другое</option>
             <option value="agent,contractor">Агент, Подрядчик</option>
           </select>
         </label>

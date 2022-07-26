@@ -1,6 +1,5 @@
 import moment from 'moment';
 import { ListType } from '../../utils/types';
-import EditButton from '../EditButton/EditButton';
 import edit from '../../assets/svg/Edit.svg';
 
 type MyProps = ListType & { openInfoWindow: () => void };
@@ -23,7 +22,6 @@ const CardInfo = ({
     <>
       <div className="main-page__title">
         <span>{shortName}</span>
-        <EditButton />
       </div>
       <div className="card-block__info">
         <div className="card-block__info-title">

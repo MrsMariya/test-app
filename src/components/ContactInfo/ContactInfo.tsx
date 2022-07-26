@@ -1,8 +1,17 @@
 /* eslint-disable no-continue */
 import { ContactType } from '../../utils/types';
-import EditButton from '../EditButton/EditButton';
+import edit from '../../assets/svg/Edit.svg';
 
-const ContactInfo = ({ lastname, firstname, patronymic, phone, email }: ContactType) => {
+type MyProps = ContactType & { openContactsWindow: () => void };
+
+const ContactInfo = ({
+  lastname,
+  firstname,
+  patronymic,
+  phone,
+  email,
+  openContactsWindow,
+}: MyProps) => {
   const phoneInfo = (s: string) => {
     let result = '';
     const prefixNumber = (str: string) => {
@@ -42,7 +51,9 @@ const ContactInfo = ({ lastname, firstname, patronymic, phone, email }: ContactT
     <div className="card-block__contact">
       <div className="card-block__info-title">
         Контактная информация
-        <EditButton />
+        <button className="edit" type="button" onClick={openContactsWindow}>
+          <img src={edit} alt="edit" />
+        </button>
       </div>
       <table>
         <tbody>

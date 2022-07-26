@@ -43,3 +43,11 @@ export type ConfirmInfoType = {
   type: Array<string>;
   shortName: string;
 };
+
+export type ContactInfoType = {
+  lastname: string;
+  firstname: string;
+  patronymic: string;
+  phone: string;
+  email: string;
+};

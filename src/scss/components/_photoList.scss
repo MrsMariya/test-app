@@ -1,0 +1,39 @@
+.photos-items {
+  display: flex;
+  gap: 1.5rem;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+  }
+}
+
+.photo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 12rem;
+
+  button {
+    position: absolute;
+    top: 15%;
+    left: 85%;
+    border: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    transform: translate(-15%, -85%);
+    background-image: url('../../assets/svg/Close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+    &:active {
+      opacity: 1;
+    }
+  }
+}

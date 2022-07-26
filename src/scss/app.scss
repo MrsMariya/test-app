@@ -11,6 +11,8 @@ body {
   display: flex;
   flex-direction: row;
   background-color: $background;
+  max-width: 1440px;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     width: calc(100vw - 20px);

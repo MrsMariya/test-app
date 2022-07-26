@@ -1,5 +1,5 @@
 export const RoutersMap = {
-  signIn: '',
+  signIn: '/test-app',
   main: '/main',
   card: '/card',
   notFound: '*',

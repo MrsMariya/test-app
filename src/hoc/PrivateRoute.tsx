@@ -9,7 +9,7 @@ type PrivateRouteType = {
 const PrivateRoute = ({ children }: PrivateRouteType) => {
   const token = sessionStorage.getItem('token');
 
-  return !token ? <Navigate to={RoutersMap.notFound} replace /> : children;
+  return !token ? <Navigate to={RoutersMap.signIn} replace /> : children;
 };
 
 export default PrivateRoute;

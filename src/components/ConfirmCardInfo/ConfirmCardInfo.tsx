@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { ListType } from '../../utils/types';
+import { ConfirmInfoType } from '../../utils/types';
 
 type MyPropsType = {
-  editInfo: (data: ListType) => void;
+  editInfo: (data: ConfirmInfoType) => void;
   closeInfoWindow: () => void;
 };
 
@@ -12,7 +12,7 @@ const ConfirmCardInfo = ({ editInfo, closeInfoWindow }: MyPropsType): JSX.Elemen
     formState: { errors, isDirty },
     handleSubmit,
     getValues,
-  } = useForm<ListType>({
+  } = useForm<ConfirmInfoType>({
     mode: 'onSubmit',
   });
 
@@ -23,7 +23,7 @@ const ConfirmCardInfo = ({ editInfo, closeInfoWindow }: MyPropsType): JSX.Elemen
     const no = getValues('contract.no');
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const issue_date = getValues('contract.issue_date');
-    const type = getValues('type');
+    const type = (getValues('type') as unknown as string).split(',');
     editInfo({
       shortName,
       name,
@@ -33,9 +33,6 @@ const ConfirmCardInfo = ({ editInfo, closeInfoWindow }: MyPropsType): JSX.Elemen
         issue_date,
       },
       type,
-      id: '',
-      photos: [],
-      status: '',
     });
     closeInfoWindow();
   };
@@ -116,14 +113,16 @@ const ConfirmCardInfo = ({ editInfo, closeInfoWindow }: MyPropsType): JSX.Elemen
         )}
         <label htmlFor="type">
           Тип:
-          <input
-            type="text"
+          <select
             placeholder="Введите тип организации"
             id="type"
             {...register('type', {
               required: 'Необходимо заполнить поле!',
             })}
-          />
+          >
+            <option value="other">Другое</option>
+            <option value="agent,contractor">Агент, Подрядчик</option>
+          </select>
         </label>
         {errors?.type && (
           <p style={{ color: 'red' }}>{(errors?.type?.message as unknown as string) || 'Error!'}</p>

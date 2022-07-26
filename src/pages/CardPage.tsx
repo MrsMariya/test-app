@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import CardInfo from '../components/CardInfo/CardInfo';
 import ConfirmationWindow from '../components/ConfirmationWindow/ConfirmationWindow';
 import ConfirmCardInfo from '../components/ConfirmCardInfo/ConfirmCardInfo';
@@ -8,7 +8,7 @@ import Header from '../components/Header/Header';
 import Photos from '../components/photos/Photos';
 import SideBar from '../components/SideBar/SideBar';
 import { contactObject, infoObject, URLCompanies, URLContacts } from '../utils/constants';
-import { ContactType, ListType } from '../utils/types';
+import { ConfirmInfoType, ContactType, ListType } from '../utils/types';
 
 const CardPage = () => {
   const token = sessionStorage.getItem('token');
@@ -18,15 +18,18 @@ const CardPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenInfo, setIsOpenInfo] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState<ConfirmInfoType>(infoObject);
 
   const { contract, name, photos, shortName, status, type, businessEntity, id } = info;
   const { lastname, firstname, patronymic, phone, email } = contact;
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${token}`,
-    },
-  };
+  const config = useMemo(() => {
+    return {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${token}`,
+      },
+    };
+  }, [token]);
 
   useEffect(() => {
     axios
@@ -51,7 +54,7 @@ const CardPage = () => {
         setError(e.message);
       });
     setIsLoading(false);
-  }, [token]);
+  }, []);
 
   const closeWindow = () => {
     return setIsOpen(false);
@@ -82,9 +85,13 @@ const CardPage = () => {
       });
   };
 
-  const editInfo = (data: ListType) => {
-    setInfo(data);
-    axios.patch(URLCompanies, info, config).catch((err) => console.log(err.message));
+  const editInfo = (d: ConfirmInfoType) => {
+    setData(d);
+    const file = JSON.stringify(d);
+    axios
+      .patch(URLCompanies, file, config)
+      .then((res) => setInfo(res.data))
+      .catch((err) => setError(err.message));
   };
 
   return (

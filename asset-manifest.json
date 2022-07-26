@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/test-app/static/css/main.7f4c4afb.css",
+    "main.js": "/test-app/static/js/main.1a2652bb.js",
+    "static/media/Delete.svg": "/test-app/static/media/Delete.88ac53e757a25dc03bbe0cdcd8e962d6.svg",
+    "static/media/Settings.svg": "/test-app/static/media/Settings.2a00b183bd04b8146b6d553ca05434e5.svg",
+    "static/media/Market.svg": "/test-app/static/media/Market.9b837e2383076259d442e96382d722a2.svg",
+    "static/media/Rotation.svg": "/test-app/static/media/Rotation.61d2bd9a8297f4838744a72bd7a70dae.svg",
+    "static/media/Close.svg": "/test-app/static/media/Close.14563baa16cb9e1cad43.svg",
+    "static/media/Chat.svg": "/test-app/static/media/Chat.e18f6befb6875dcdb9b1ed12d06a37ce.svg",
+    "static/media/Edit.svg": "/test-app/static/media/Edit.f2a4884eb5ab906fd52c375890151550.svg",
+    "static/media/Arrow.svg": "/test-app/static/media/Arrow.b6f83b942b09737599096bc0be5370ae.svg",
+    "index.html": "/test-app/index.html",
+    "static/media/Home.svg": "/test-app/static/media/Home.f5ddaf56c173400dedf1a5f5138a80fe.svg",
+    "static/media/Building.svg": "/test-app/static/media/Building.3e9179cc52ad3300fc9de93ae8321e28.svg",
+    "static/media/Linked.svg": "/test-app/static/media/Linked.d37e77c36fa5953283cc0214cf280358.svg",
+    "static/media/Add.svg": "/test-app/static/media/Add.1d506fdd849d6a5a8230ace7387fa620.svg",
+    "static/media/Exit.svg": "/test-app/static/media/Exit.a46b6e44987600dc52aec03168a59227.svg",
+    "static/media/Search.svg": "/test-app/static/media/Search.c0338ffd02ea3a5b4d3f2e3be1241afd.svg",
+    "main.7f4c4afb.css.map": "/test-app/static/css/main.7f4c4afb.css.map",
+    "main.1a2652bb.js.map": "/test-app/static/js/main.1a2652bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f4c4afb.css",
+    "static/js/main.1a2652bb.js"
+  ]
+}

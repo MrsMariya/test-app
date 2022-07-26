@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test-app/static/css/main.7f4c4afb.css",
-    "main.js": "/test-app/static/js/main.1a2652bb.js",
+    "main.js": "/test-app/static/js/main.457da658.js",
     "static/media/Delete.svg": "/test-app/static/media/Delete.88ac53e757a25dc03bbe0cdcd8e962d6.svg",
     "static/media/Settings.svg": "/test-app/static/media/Settings.2a00b183bd04b8146b6d553ca05434e5.svg",
     "static/media/Market.svg": "/test-app/static/media/Market.9b837e2383076259d442e96382d722a2.svg",
@@ -18,10 +18,10 @@
     "static/media/Exit.svg": "/test-app/static/media/Exit.a46b6e44987600dc52aec03168a59227.svg",
     "static/media/Search.svg": "/test-app/static/media/Search.c0338ffd02ea3a5b4d3f2e3be1241afd.svg",
     "main.7f4c4afb.css.map": "/test-app/static/css/main.7f4c4afb.css.map",
-    "main.1a2652bb.js.map": "/test-app/static/js/main.1a2652bb.js.map"
+    "main.457da658.js.map": "/test-app/static/js/main.457da658.js.map"
   },
   "entrypoints": [
     "static/css/main.7f4c4afb.css",
-    "static/js/main.1a2652bb.js"
+    "static/js/main.457da658.js"
   ]
 }
